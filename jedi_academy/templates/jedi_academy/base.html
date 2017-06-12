@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Jedi Order</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+<div class='container'>
+    <div class='row'>
+        <div class='col-12'>
+            <h2 class='text-center'>Академия джедаев</h2>
+            <div class="text-center">
+                | <a href='/'>Главная</a>
+                | <a href='{% url "academy:jedi:list_all" %}'>Все Джедаи</a>
+                | <a href='{% url "academy:jedi:list_active" %}'>Джедаи и падаваны</a> |
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            {% block content%}{% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

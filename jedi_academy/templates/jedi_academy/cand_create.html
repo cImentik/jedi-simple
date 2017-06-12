@@ -1,0 +1,12 @@
+{% extends 'jedi_academy/base.html' %}
+
+{% block content %}
+    <div class='text-center'>
+        <h4>Заполни свои данные, кандидат!</h4>
+        <form action='{% url 'academy:candidate:create' %}', method='POST'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type='submit' class='btn btn-success'>Далее</button>
+        </form>
+    </div>
+{% endblock %}

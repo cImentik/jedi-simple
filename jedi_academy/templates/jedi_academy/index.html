@@ -1,0 +1,8 @@
+{% extends 'jedi_academy/base.html' %}
+
+{% block content %}
+        <div class="text-center">
+            <a class='btn btn-secondary' href='{% url "academy:jedi:choice" %}'>Для Джедаев</a>
+            <a class='btn btn-secondary' href='{% url "academy:candidate:create" %}'>Для кандидатов</a>
+        </div>
+{% endblock %}

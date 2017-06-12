@@ -1,0 +1,23 @@
+{% extends 'jedi_academy/base.html' %}
+
+{% block content %}
+
+    <div class="text-center"> <span><strong>Информация о кондидате</strong></span> </div>
+    <p><strong>Планета:</strong> {{ candidate.life_planet.name }}</p>
+
+    <p><strong>Возраст:</strong> {{ candidate.age }}</p>
+
+    <p><strong>Email:</strong> {{ candidate.email }}</p>
+    <hr />
+
+    <div class="text-center"> <span><strong>Результаты теста</strong></span> </div>
+    <table class='table'>
+        {% for exam in candidate.exam_set.all %}
+            <tr>
+                <td>{{ exam.question.content }}</td>
+                <td>{{ exam.answer }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a class='btn btn-primary' href='{% url 'academy:jedi:go' jedi_pk candidate.pk %}'>Принять на обучение</a>
+{% endblock %}

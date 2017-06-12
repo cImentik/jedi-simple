@@ -1,0 +1,14 @@
+{% extends 'jedi_academy/base.html' %}
+
+{% block content %}
+    <div class="text-center">
+        <span>Готовые к обучению</span>
+        {% for candidate in candidates %}
+            <p>
+                <a href='{% url 'academy:candidate:detail' pk=candidate.id %}'>{{ candidate.name }}</a>
+            </p>
+        {% empty %}
+            <span>Нет способных юнлингов</span>
+        {% endfor %}
+    </div>
+{% endblock %}
